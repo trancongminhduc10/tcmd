@@ -120,6 +120,7 @@ window.addEventListener('DOMContentLoaded', () => {
   initFilters();
   initNavSmooth();
   initContactForm();
+  initLightbox();
   filterProjects('all');
   setActiveNav();
 });
@@ -129,3 +130,42 @@ window.addEventListener('scroll', () => {
 });
 
 themeToggle.addEventListener('click', toggleTheme);
+
+function initLightbox() {
+  const lightbox = document.getElementById('projectLightbox');
+  const lightboxImage = document.getElementById('lightboxImage');
+  const lightboxTitle = document.getElementById('lightboxTitle');
+  const lightboxCategory = document.getElementById('lightboxCategory');
+  const lightboxDesc = document.getElementById('lightboxDesc');
+  const lightboxClose = document.getElementById('lightboxClose');
+
+  document.querySelectorAll('.project-media img').forEach((img) => {
+    img.addEventListener('click', () => {
+      const card = img.closest('.project-card');
+      if (!card) return;
+      const category = card.querySelector('.project-meta p')?.textContent || '';
+      const title = card.querySelector('.project-meta h3')?.textContent || '';
+      const desc = card.querySelector('.project-meta p:last-child')?.textContent || '';
+
+      lightboxImage.src = img.src;
+      lightboxImage.alt = title;
+      lightboxTitle.textContent = title;
+      lightboxCategory.textContent = category;
+      lightboxDesc.textContent = desc;
+      lightbox.classList.add('open');
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+  }
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeLightbox();
+  });
+}
