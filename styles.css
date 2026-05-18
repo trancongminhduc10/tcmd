@@ -726,6 +726,13 @@ body.theme-dark .filter-button {
   max-height: 70vh;
   overflow: hidden;
   background: #111;
+  display: grid;
+  place-items: center;
+}
+
+.lightbox-image-wrapper.no-image {
+  background-size: cover;
+  background-position: center;
 }
 
 .lightbox-image-wrapper img {

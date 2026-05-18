@@ -138,17 +138,35 @@ function initLightbox() {
   const lightboxCategory = document.getElementById('lightboxCategory');
   const lightboxDesc = document.getElementById('lightboxDesc');
   const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxWrapper = document.querySelector('.lightbox-image-wrapper');
 
-  document.querySelectorAll('.project-media img').forEach((img) => {
-    img.addEventListener('click', () => {
-      const card = img.closest('.project-card');
+  document.querySelectorAll('.project-media').forEach((media) => {
+    media.addEventListener('click', () => {
+      const card = media.closest('.project-card');
       if (!card) return;
       const category = card.querySelector('.project-meta p')?.textContent || '';
       const title = card.querySelector('.project-meta h3')?.textContent || '';
       const desc = card.querySelector('.project-meta p:last-child')?.textContent || '';
+      const img = media.querySelector('img');
+      const computedStyle = window.getComputedStyle(media);
+      const bgImage = computedStyle.backgroundImage;
 
-      lightboxImage.src = img.src;
-      lightboxImage.alt = title;
+      if (img && img.src) {
+        lightboxImage.src = img.src;
+        lightboxImage.alt = title;
+        lightboxImage.style.display = 'block';
+        lightboxWrapper.classList.remove('no-image');
+        lightboxWrapper.style.backgroundImage = '';
+      } else if (bgImage && bgImage !== 'none') {
+        lightboxImage.style.display = 'none';
+        lightboxWrapper.classList.add('no-image');
+        lightboxWrapper.style.backgroundImage = bgImage;
+      } else {
+        lightboxImage.style.display = 'none';
+        lightboxWrapper.classList.add('no-image');
+        lightboxWrapper.style.backgroundImage = 'linear-gradient(135deg, rgba(47,125,255,0.35), rgba(111,148,255,0.12))';
+      }
+
       lightboxTitle.textContent = title;
       lightboxCategory.textContent = category;
       lightboxDesc.textContent = desc;
@@ -158,6 +176,8 @@ function initLightbox() {
 
   function closeLightbox() {
     lightbox.classList.remove('open');
+    lightboxWrapper.style.backgroundImage = '';
+    lightboxWrapper.classList.remove('no-image');
   }
 
   lightboxClose.addEventListener('click', closeLightbox);
