@@ -678,8 +678,8 @@ body.theme-dark .filter-button {
 }
 
 .project-media {
-  height: 220px;
-  max-height: 240px;
+  height: 180px;
+  max-height: 180px;
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -689,8 +689,8 @@ body.theme-dark .filter-button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
-  transform: scale(1.02);
 }
 
 .project-media-1 {
