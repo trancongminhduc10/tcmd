@@ -1,47 +1,47 @@
-# Trần Công Minh Đức — UI/UX Portfolio
+# Trần Công Minh Đức — Portfolio UI/UX
 
-A modern personal portfolio website for a creative UI/UX and design student.
+Website portfolio cá nhân dành cho sinh viên UI/UX và thiết kế sáng tạo.
 
-## Overview
+## Tổng quan
 
-This project includes a premium portfolio layout with:
+Dự án gồm giao diện portfolio cao cấp với:
 
-- Glassmorphism and soft gradients
-- Animated hero section and floating particles
-- Responsive layout for desktop, tablet, and mobile
-- Skills charts, project gallery, and contact form
-- Dark mode / light mode toggle
-- Smooth scrolling navigation
+- Glassmorphism và gradient mềm mại
+- Section hero động và hiệu ứng hạt bay
+- Thiết kế responsive cho desktop, tablet và di động
+- Biểu đồ kỹ năng, gallery dự án và form liên hệ
+- Chế độ tối / sáng và chuyển đổi chủ đề
+- Thanh điều hướng mượt mà
 
-## Files
+## Tệp tin
 
-- `index.html` — main portfolio page
-- `styles.css` — responsive styling and visual design
-- `script.js` — interaction logic, theme toggle, filters
+- `index.html` — trang portfolio chính
+- `styles.css` — phong cách và bố cục responsive
+- `script.js` — tương tác, chuyển chủ đề và lọc dự án
 
-## Local Preview
+## Xem thử cục bộ
 
-Open `index.html` in your browser or serve the folder with a local static server.
+Mở `index.html` trong trình duyệt hoặc dùng server tĩnh.
 
-Example using Python:
+Ví dụ với Python:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then visit `http://127.0.0.1:8000`.
+Sau đó truy cập `http://127.0.0.1:8000`.
 
-## GitHub Pages Deployment
+## Triển khai GitHub Pages
 
-This repository includes a GitHub Actions workflow to publish a static site from the repository root to the `gh-pages` branch.
+Repository đã có workflow GitHub Actions để xuất website tĩnh từ root sang nhánh `gh-pages`.
 
-### Enable GitHub Pages
+### Kích hoạt GitHub Pages
 
-1. Push the repository to GitHub.
-2. In GitHub, go to `Settings` → `Pages`.
-3. Set the source to the `gh-pages` branch.
-4. Save and wait a few minutes for the site to be published.
+1. Đẩy mã lên GitHub.
+2. Vào `Settings` → `Pages`.
+3. Chọn nguồn là nhánh `gh-pages`.
+4. Lưu và chờ vài phút để website được xuất bản.
 
-## Notes
+## Ghi chú
 
-The portfolio is styled for a premium creative brand with polished animations and modern UI trends.
+Portfolio được thiết kế cho phong cách sáng tạo cao cấp với hiệu ứng chuyển động mượt mà và UI hiện đại.

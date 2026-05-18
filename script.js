@@ -9,7 +9,7 @@ const projectsGrid = document.getElementById('projectsGrid');
 const chartElements = document.querySelectorAll('.chart');
 const contactForm = document.getElementById('contactForm');
 
-const phrases = ['UI/UX Designer', 'Website Creator', 'Poster Artist', 'Creative Thinker'];
+const phrases = ['Nhà thiết kế UI/UX', 'Người tạo website', 'Designer poster', 'Tư duy sáng tạo'];
 let phraseIndex = 0;
 let charIndex = 0;
 let deleting = false;
@@ -104,7 +104,7 @@ function initContactForm() {
   if (!contactForm) return;
   contactForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    alert('Cảm ơn bạn! Tin nhắn của bạn đã được gửi.');
+    alert('Cảm ơn bạn! Tin nhắn của bạn đã được gửi thành công.');
     contactForm.reset();
   });
 }
